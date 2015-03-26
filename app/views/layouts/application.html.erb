@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Ziglee" %></title>
+    <title><%= full_title(yield(:title)) %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -16,15 +16,14 @@
   <body>  
 	<%= render 'layouts/header' %>
 	
-	<div class="row">
-	  <% flash.each do |name, msg| %>
-	    <% if msg.is_a?(String) %>
-	      <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
-	    <% end %>
-	  <% end %>
-	</div>
+	<%= display_flash_messages %>
+	
+	<div id="main-content" class="row">
 	  
     <%= yield %>
+	
+    </div>
+	
 
   </body>
 </html>

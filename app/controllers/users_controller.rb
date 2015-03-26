@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
-  require 'rest_client'
-  
-  API_BASE_URL = "http://www.ziglee.com/api/v1/"
   
   def new 
+    @user = User.new(email: nil, first: nil, last: nil,
+                                location: nil, type: nil, password: nil) 
   end 
   
   def create
+    @user = User.new(user_params)
+    @user.save 
     
+    if @user.response[:success] == 1
+     flash[:info] = "Please check your email to activate your account."
+     redirect_to root_url  
+    else
+     render 'new'
+    end 
   end 
   
   def update
@@ -17,5 +24,11 @@ class UsersController < ApplicationController
   end 
   
   private 
+  
+  def user_params
+    params.require(:user).permit(:first, :last, :location, 
+                                :type, :email, :password)
+  end
+  
   
 end
