@@ -1,0 +1,23 @@
+<% provide(:title, 'Log In')%>
+
+<h3 class="text-center">Log In</h3>
+
+<div class="large-6 large-offset-3 columns">
+	
+	<%= form_tag login_path do %>
+	
+	     <%= label_tag(:email) %>
+	     <%= text_field_tag(:email) %>
+		 
+         <%= label_tag(:password) %>
+	     <%= password_field_tag(:password) %>
+		  
+          <div class="text-center">
+	      <%= submit_tag("Log In", class: "small button radius success")%>
+	      </div>
+		  
+		  <p>New user? Register <%= link_to "here", register_path %>.</p>
+
+	 <% end %>
+
+</div>
