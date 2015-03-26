@@ -1,0 +1,28 @@
+<% provide(:title, 'Register')%>
+
+<h3 class="text-center">Register</h3>
+
+<div class="large-6 large-offset-3 columns">
+	
+	<%= form_for(@user) do |f| %>
+	
+	      <%= f.text_field :first, label: "First Name", :placeholder => "John"%>
+		  
+		  <%= f.text_field :last, label: "Last Name", :placeholder => "Doe"%>
+		  
+		  <%= f.text_field :location,label: "Location", :placeholder => "San Francisco, CA"%>
+		  
+		  <%= f.select(:type, [['Worker', 0], ['Employer', 1]]) %>
+
+	      <%= f.text_field :email, :placeholder => "Email"%>
+
+	      <%= f.password_field :password, :placeholder => "Password"%>
+		  
+          <div class="text-center">
+	      <%= f.submit "Create my account"%>
+	      </div>
+
+	 <% end %>
+
+</div>
+	
