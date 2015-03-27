@@ -3,7 +3,7 @@
   margin-bottom: 10px;
 }
 
-//Full With to Row 
+//Row 
 .fullWidth {
    width: 100%;
    margin-left: auto;
@@ -11,4 +11,34 @@
    max-width: initial;
 }
 
+.header {
+	margin-bottom: 0px;
+}
 //Button
+
+
+
+
+//Gutter
+
+
+
+//Table
+.result:hover {
+    background-color: #F5A400;
+}
+
+
+//Map
+#map_canvas { 
+     height: 800px;
+     width: 100%;
+     background-color: #cccccc;
+}
+
+img,
+object,
+embed {
+  max-width: none !important;
+  height: auto;
+}

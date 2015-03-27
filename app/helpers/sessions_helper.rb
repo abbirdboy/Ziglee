@@ -23,7 +23,7 @@ module SessionsHelper
       session[:id] = user.response[:userCredentials][:id]
       session[:token] = user.response[:userCredentials][:token]
       session[:type] = user.response[:userCredentials][:indicator]
-      flash[:success] = "Successfully Logged In"
+      session[:email] = user.email
       redirect_to root_url
     else
       flash.now[:alert] = "Invalid email or password"
@@ -32,7 +32,7 @@ module SessionsHelper
   end 
   
   def current_user 
-    @current_user ||= {:id => session[:id], :token => session[:token], :type => session[:type]} if session[:id]
+    @current_user ||= {:id => session[:id], :token => session[:token], :type => session[:type], :email => session[:email]} if session[:id]
   end
   
 end
