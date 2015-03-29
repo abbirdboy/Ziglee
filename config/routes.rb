@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'jobs#index'
   
+  get 'home' => 'static_pages#home'
+  
   get 'register' => 'users#new'
   
   get 'login' => 'sessions#new'

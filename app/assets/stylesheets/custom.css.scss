@@ -1,6 +1,6 @@
 //Top-bar
 .top-bar {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 //Row 
@@ -11,12 +11,41 @@
    max-width: initial;
 }
 
-.header {
-	margin-bottom: 0px;
-}
+//Navigation 
+
+
 //Button
 
 
+
+//Horizontal Line Divider 
+
+.hr{
+	
+	margin-bottom: 0px;
+	
+}
+
+
+//Content Area 
+
+
+
+
+//Home Page
+
+.home-page{
+	   height:100vh;
+	   //background: no-repeat center center fixed;
+       background-image: url('https://download.unsplash.com/photo-1422479516648-9b1f0b6e8da8');
+	   background-size: cover;
+       background-repeat: repeat-y; /* for vertical repeat */
+       background-repeat: repeat-x; /* for horizontal repeat */
+	   background-height: auto;
+	   background-width: auto;
+
+	   
+}
 
 
 //Gutter
