@@ -20,15 +20,10 @@
 
 //Horizontal Line Divider 
 
-.hr{
-	
-	margin-bottom: 0px;
-	
-}
-
 
 //Content Area 
 
+//Search box button
 
 
 
@@ -52,6 +47,31 @@
 
 
 
+
+
+//Jobs Results
+#description {
+	color: #B8B8B8;
+}
+
+//Job Profile Picture 
+#profile{
+	width:100px;
+	height:100px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right:10px;
+}
+
+//Viewport
+body, html {
+   height:100%
+}
+
+
+
+
+
 //Table
 .result:hover {
     background-color: #F5A400;
@@ -60,7 +80,7 @@
 
 //Map
 #map_canvas { 
-     height: 800px;
+     height: 100%;
      width: 100%;
      background-color: #cccccc;
 }

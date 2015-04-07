@@ -1,19 +1,18 @@
-<div class="row collapse fullWidth">
+<div class="row collapse fullWidth" style="height:100%;">
 <%= render "scripts" %>
 
- <div class="large-7 large-push-5 columns">
+ <div id="maps" class="large-7 large-push-5 columns" style="height:100%;">
 
    <%= render "map" %>
 
  </div>
   
- <div class="large-5 large-pull-7 columns">
+ <div class="large-5 large-pull-7 columns" style="height:100%;">
 	
-	
-	<%= form_tag '/', :method => :get do %>
-     <div class="row collapse">
+	<%= form_tag '/', :method => :get, :remote => true do %>
+     <div id="search-box" class="row collapse">
 		<div class="small-10 columns">
-	     	<%= text_field_tag "search", nil, placeholder: "Search" %>
+	     	<%= text_field_tag "search", nil, placeholder: "Search Jobs" %>
 		</div>
 		<div class="small-2 columns">
 			<%= button_tag(type: "submit", class: "button postfix") do %>
@@ -24,27 +23,11 @@
 
 	<% end %>
 	
-	<% for i in 0..@jobs.response[:offers].length-1 do %>
-		<a class="result" style="display:block" href="<%=@jobs.response[:offers][i][:offer][:pic]%>">
-			<div class="row">
-			
-				<div class="small-3 columns">
-					<img src="<%=@jobs.response[:offers][i][:offer][:pic]%>" alt="Mountain View" style="width:100px;height:100px">
-				</div>
-			
-				<div class="small-9 columns">
-					<h5 class="text-left"><%= @jobs.response[:offers][i][:offer][:title].split.map(&:capitalize).join(' ')%></h5>
-					<h6 class-"text-left"><%= @jobs.response[:offers][i][:offer][:name]%> | <%= @jobs.response[:offers][i][:offer][:category].capitalize!%></h5>
-					<p><%= @jobs.response[:offers][i][:offer][:description]%></p>
-			    </div>
-		
-		
-			</div>
-			<hr>
-		</a>
-	<%end%>
+ <div id="results" class="row" style="height:100%; overflow-y:auto;">
 	
+	<%= render "results" %>
 	
+ </div>	
 
  </div>
  

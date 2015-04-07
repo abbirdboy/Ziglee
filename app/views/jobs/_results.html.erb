@@ -1,0 +1,18 @@
+	<% for i in 0..@jobs.response[:offers].length-1 do %>
+		<a class="result" href="<%=@jobs.response[:offers][i][:offer][:pic]%>">
+			<div class="row">
+			
+				<div class="small-4 medium-2 large-3 columns">
+					<img id="profile" src="<%=@jobs.response[:offers][i][:offer][:pic]%>" alt="Profile Picture">
+				</div>
+			
+				<div class="small-8 medium-10 large-9 columns">
+					<h5 class="text-left"><%= @jobs.response[:offers][i][:offer][:title].split.map(&:capitalize).join(' ')%></h5>
+					<h6 class-"text-left"><%= @jobs.response[:offers][i][:offer][:name]%> | <%= @jobs.response[:offers][i][:offer][:category].capitalize!%></h6>
+					<p id="description"><%= @jobs.response[:offers][i][:offer][:description]%></p>
+			    </div>
+		
+			</div>
+			<hr>
+		</a>
+	<%end%>
