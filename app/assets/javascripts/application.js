@@ -19,8 +19,13 @@
 //= require gmaps/google
 //= require foundation
 
-$(function(){ $(document).foundation(); });
+
 
 //= require turbolinks
 //= require_tree .
 
+//$(function(){ $(document).foundation(); });
+
+window.onload = function() {
+        $(document).foundation();
+};
