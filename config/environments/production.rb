@@ -75,6 +75,5 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  config.serve_static_files = true
   config.active_record.dump_schema_after_migration = false
 end
