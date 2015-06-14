@@ -14,18 +14,11 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 
-
 //= require underscore
 //= require gmaps/google
 //= require foundation
 
-
-
 //= require turbolinks
 //= require_tree .
 
-//$(function(){ $(document).foundation(); });
-
-window.onload = function() {
-        $(document).foundation();
-};
+$(function(){ $(document).foundation(); });
